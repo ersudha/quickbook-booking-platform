@@ -1,13 +1,13 @@
-package com.quickbook.movieservice;
+package com.quickbook.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class QuickbookMovieServiceApplication {
+public class QuickbookUserServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(QuickbookMovieServiceApplication.class, args);
+        SpringApplication.run(QuickbookUserServiceApplication.class, args);
     }
 
 }

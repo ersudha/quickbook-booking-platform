@@ -1,4 +1,4 @@
-package com.quickbook.movieservice;
+package com.quickbook.quickbookmovieservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
