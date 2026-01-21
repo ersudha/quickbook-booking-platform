@@ -1,9 +1,7 @@
 package com.quickbook.authservice.controllers;
 
-import com.quickbook.authservice.dto.JwtResponse;
 import com.quickbook.authservice.dto.LoginRequest;
-import com.quickbook.authservice.services.AuthService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.quickbook.authservice.entities.JwtUtil;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,15 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    @Autowired
-    AuthService authService;
+    private final JwtUtil jwtUtil;
 
-    public AuthController(AuthService authService){
-        this.authService = authService;
+    public AuthController(JwtUtil jwtUtil){
+        this.jwtUtil = jwtUtil;
     }
 
-    //@PostMapping("/login")
-    /*public AuthResponse login(@RequestBody LoginRequest request) {
-        return authService.login(request.getUserName(), request.getPassword());
-    }*/
+    @PostMapping("/login")
+    public String login(@RequestBody LoginRequest request) {
+        return jwtUtil.generateToken(request.getUserName());
+    }
 }
