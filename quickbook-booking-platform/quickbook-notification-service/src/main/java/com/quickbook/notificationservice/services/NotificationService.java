@@ -2,7 +2,9 @@ package com.quickbook.notificationservice.services;
 
 import com.quickbook.notificationservice.dto.NotificationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NotificationService {
     @Autowired
     EmailService emailService;

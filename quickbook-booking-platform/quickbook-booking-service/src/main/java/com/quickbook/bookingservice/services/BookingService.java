@@ -5,6 +5,7 @@ import com.quickbook.bookingservice.dto.BookingResponse;
 import com.quickbook.bookingservice.entities.Booking;
 import com.quickbook.bookingservice.entities.BookingStatus;
 import com.quickbook.bookingservice.repositories.BookingRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class BookingService {
     @Autowired
     BookingRepository bookingRepository;
 
-    //@Transactional
+    @Transactional
     public BookingResponse createBooking(BookingRequest request) {
 
         Booking booking = new Booking();

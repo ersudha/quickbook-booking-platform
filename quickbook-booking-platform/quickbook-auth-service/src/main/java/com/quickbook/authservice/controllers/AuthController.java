@@ -16,8 +16,12 @@ public class AuthController {
     @Autowired
     AuthService authService;
 
-    @PostMapping("/login")
-    public JwtResponse login(@RequestBody LoginRequest req) {
-        return authService.authenticate(req);
+    public AuthController(AuthService authService){
+        this.authService = authService;
     }
+
+    //@PostMapping("/login")
+    /*public AuthResponse login(@RequestBody LoginRequest request) {
+        return authService.login(request.getUserName(), request.getPassword());
+    }*/
 }

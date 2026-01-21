@@ -4,10 +4,10 @@ import com.quickbook.bookingservice.dto.BookingRequest;
 import com.quickbook.bookingservice.dto.BookingResponse;
 import com.quickbook.bookingservice.services.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
+@RestController
+@RequestMapping("api/v1/booking")
 public class BookingController {
 
     @Autowired

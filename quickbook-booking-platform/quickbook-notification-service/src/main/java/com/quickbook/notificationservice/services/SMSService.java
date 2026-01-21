@@ -1,5 +1,8 @@
 package com.quickbook.notificationservice.services;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class SMSService {
 
     public String sendSMS(String phoneNumber, String message){
